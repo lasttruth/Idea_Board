@@ -8,3 +8,8 @@ body {
     width: 800px;
     margin: 0 auto;
   }
+
+  .grid-container{
+      display: grid;
+      grid-gap: 50px 100px;
+  }
