@@ -1,15 +1,146 @@
-html {
-    font-family: fantasy;
-    background-color: blueviolet;
-    font-size: medium;
-}
-
-body {
-    width: 800px;
-    margin: 0 auto;
+/* For small screens */
+.span4, .span6, .spanAll {
+    grid-column-end: span 12;
+  }
+  
+  /* For large screens */
+  @media (min-width: 650px) {
+    .span4 {
+      grid-column-end: span 4;
+    }
+    .span6 {
+      grid-column-end: span 6;
+    }
   }
 
-  .grid-container{
-      display: grid;
-      grid-gap: 50px 100px;
+  [class^="griditem"] {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    background-color: blue;
+ }
+
+
+/* block styling */
+
+header, aside, main, footer {
+    padding: 20px;
   }
+  
+  header {
+    text-align: center;
+    border: 5px solid black;
+    border-bottom: 0;
+  }
+  
+  aside {
+    border-right: 5px solid black;
+  }
+  
+  body > div {
+    border: 5px solid black;
+    display: flex;
+  }
+  
+  footer {
+    border: 5px solid black;
+    border-top: 0;
+  }
+  
+  aside {
+    flex: 3;
+  }
+  
+  main {
+    flex: 7;
+  }
+
+
+  /* Form styling */
+
+aside {
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+  }
+  
+  aside div {
+    margin-bottom: 20px;
+  }
+  
+  label, select, input {
+    display: block;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  select, input, button {
+    width: 100%;
+  }
+  
+  input {
+    background: black;
+    box-shadow: inset 1px 1px 1px white;
+    color: yellow;
+    border: none;
+    padding: 5px;
+    width: 201.5px;
+  }
+  
+  button {
+    background: black;
+    color: yellow;
+    padding: 5px 0;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 2px white, inset -1px -1px 2px #ccc;
+  }
+  
+
+  /* Styling the products */
+
+main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  
+  section {
+    width: 45%;
+    margin: 5px;
+    position: relative;
+    height: 215px;
+    background-image: url(image/sss.png);
+  }
+
+  section h2 {
+      color: black;
+      width: auto;
+      height: auto;
+      text-align: center;
+  }
+  
+  /*section img {
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+  }*/
+  
+  section p {
+    color: black;
+    width: auto;
+    height: auto;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 2px 2px 1px peru;
+    position: relative;
+    right: 10px;
+    bottom: -6px;
+    z-index: 2000;
+  }
+  
+  

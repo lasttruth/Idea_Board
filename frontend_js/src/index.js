@@ -20,27 +20,32 @@ fetch(`${api_url}/ideas`)
 
 
 //fetch image of the post it do and place it in the grid as a background
-function fetchBlob(){
- let img_url = 'asset/post-it'
 
- fetch(url)
- .then(response => response.blob())
- .then(pic => girdPic(pic))
- .catch(err => console.log(err));
 
- let postNote = URL.createObjectURL(pic)
-
- dummyIdeas(postNote, data);
-}
 
 function dummyIdeas(data) {
   //showing ideas in a grid as layout for the page
-  let something = document.getElementById('placeholder');
+  const main = document.querySelector('main');
+  
+ 
+
+  //iterating over the Json to display the ideas on the page in a grid
   for (let i = 0; i < data.length; i++) {
-    var div = document.createElement("div");
-    div.className += "grid-item"
-    div.innerHTML = 'Hey Check this out: ' + data[i].title + '<br> ' + data[i].body;
-    something.appendChild(div);
+    
+    const section = document.createElement('section');
+    const heading = document.createElement('h2');
+    const para = document.createElement('p');
+
+    heading.textContent = data[i].title;
+    para.textContent = data[i].body;
+
+
+    
+
+    
+    main.appendChild(section);
+    section.appendChild(heading);
+    section.appendChild(para);
     
   }
   
