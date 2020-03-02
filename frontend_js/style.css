@@ -112,7 +112,7 @@ main {
     margin: 5px;
     position: relative;
     height: 215px;
-    background-image: url(image/sss.png);
+    background-image: url(images/sss.png);
   }
 
   section h2 {
@@ -137,9 +137,12 @@ main {
     text-align: center;
     border-radius: 50%;
     box-shadow: 2px 2px 1px peru;
-    position: relative;
-    right: 10px;
-    bottom: -6px;
+    position: absolute;
+    top: 90px;
+    width: 200px;
+    height: 100px;
+    right: 70px;
+    bottom: -38px;
     z-index: 2000;
   }
   

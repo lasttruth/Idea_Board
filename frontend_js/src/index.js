@@ -26,12 +26,12 @@ fetch(`${api_url}/ideas`)
 function dummyIdeas(data) {
   //showing ideas in a grid as layout for the page
   const main = document.querySelector('main');
+  const killSwitch = document.querySelector('button');
   
- 
 
   //iterating over the Json to display the ideas on the page in a grid
   for (let i = 0; i < data.length; i++) {
-    
+
     const section = document.createElement('section');
     const heading = document.createElement('h2');
     const para = document.createElement('p');
@@ -49,7 +49,36 @@ function dummyIdeas(data) {
     
   }
   
+
+  killSwitch.onclick = hotSwap
+
+  function hotSwap(e){
+    
+    e.preventDefault();
+
+
+    
+    if (main.style.display === "none") {
+      main.style.display = "flex";
+    } else {
+      main.style.display = "none";
+    }
+
+    
+  }
+    
+
+
+
+
+//before moving on the next core phase and make a new js file for the functions
+/**
+ * need to make sure that:
+ * 
+ * i can change the elements in the main tag to somthing else without loading the page or refreshing the page(this sounds easy but probably will give me trouble for no reason.)
+ * next challenge: make the page SPA
+ */
+
+
+
 }
-
-
-//showing the post it note to show it behind the text
