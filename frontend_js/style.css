@@ -113,6 +113,7 @@ main {
     position: relative;
     height: 215px;
     background-image: url(images/sss.png);
+    background-size: 368px , 215px;
   }
 
   section h2 {

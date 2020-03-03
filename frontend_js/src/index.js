@@ -27,27 +27,61 @@ function dummyIdeas(data) {
   //showing ideas in a grid as layout for the page
   const main = document.querySelector('main');
   const killSwitch = document.querySelector('button');
+
+  let finalGroup;
+  finalGroup = data
+  updateDisplay();
   
 
-  //iterating over the Json to display the ideas on the page in a grid
-  for (let i = 0; i < data.length; i++) {
+  finalGroup = [];
 
-    const section = document.createElement('section');
-    const heading = document.createElement('h2');
-    const para = document.createElement('p');
 
-    heading.textContent = data[i].title;
-    para.textContent = data[i].body;
+  function updateDisplay(){
 
+    while (main.firstChild) {
+      main.removeChild(main.firstChild);
+    }
+
+
+    if (finalGroup.length === 0) {
+      const para = document.createElement('p');
+      para.textContent = "Whoa there bucko How did you find this page!? Theres Nothing here big Fella";
+      main.appendChild('p');
+    } else {
+      for (let i = 0; i < finalGroup.length; i++) {
+        showIdeaList(finalGroup[i]);
+        
+      }
+    }
+  }  
+
+  function showIdeaList(data){
 
     
 
-    
-    main.appendChild(section);
-    section.appendChild(heading);
-    section.appendChild(para);
+      const section = document.createElement('section');
+      const heading = document.createElement('h2');
+      const para = document.createElement('p');
+  
+      heading.textContent = data.title;
+      para.textContent = data.body;
+  
+  
+      
+      
+      
+      main.appendChild(section);
+      section.appendChild(heading);
+      section.appendChild(para);
+      
     
   }
+
+
+  
+  
+
+
   
 
   killSwitch.onclick = hotSwap
@@ -68,7 +102,19 @@ function dummyIdeas(data) {
   }
     
 
+  
 
+  function showIdeaDetails(e){
+
+    e.preventDefault();
+
+
+    //hotSwap(e);
+     updateDisplay();
+    
+
+
+  }
 
 
 //before moving on the next core phase and make a new js file for the functions
